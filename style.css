@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto:ital,wght@1,500&display=swap');
 @font-face {
-    font-family:"Roboto-Regular"; ;
+    font-family:"Roboto-Regular"; 
     src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 }
 @import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
@@ -48,12 +48,17 @@
     justify-content: center;
     align-items: center;
 }
+.game-info h1{
+    font-family: 'Kablammo', cursive;
+    padding:0px 34px;
+}
 .info{
     font-family: 'Kablammo', cursive;
     padding:0px 34px;
 }
-.win img{
-    display: none;
+#img{
+    width: 0;
+    transition: ease-in-out 1s;
 }
 
 .br-0{
@@ -68,10 +73,34 @@
 .bb-0{
     border-bottom: 0;
 }
-#reset{
+#btn{
     height:5vh;
     width: 11vh;
     margin: 10px 0px 0px 14px;
     background-color: green;
     color: white;
+    font-family:'Kablammo', cursive ;
+}
+.win{
+    display:flex;
+    align-items: center;
+}
+@media screen and (max-width: 738px) {
+    .gamingContaner{
+        flex-wrap: wrap;
+    }
+    .game-info{
+        margin-top: 32px;
+    }
+    .game-info h1{
+        font-size: 1.5rem;
+
+    }
+    .playground{
+
+        grid-template-columns: repeat(3, 20vw);
+        grid-template-rows: repeat(3, 20vw);
+
+    }
+
 }
