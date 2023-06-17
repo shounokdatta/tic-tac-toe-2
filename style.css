@@ -30,9 +30,10 @@
     display: grid;
     grid-template-columns: repeat(3, 10vw);
     grid-template-rows: repeat(3, 10vw);
+    position: relative;
 
 }
-.box{
+.box{   
     border: 2px solid black;
     font-size: 8vw;
     display: flex;
@@ -84,6 +85,14 @@
 .win{
     display:flex;
     align-items: center;
+}
+.line{
+    background-color: black;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left:0;
+    transition:ease-in-out 1s ;
 }
 @media screen and (max-width: 738px) {
     .gamingContaner{
