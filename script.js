@@ -3,9 +3,9 @@ let audioTurn=new Audio("item/ting.mp3");
 let gameOver=new Audio("item/gameover.mp3");
 let img=document.getElementById("img");
 let btn=document.getElementById("btn");
+let x = window.matchMedia("(max-width: 738px)")
 let turn="x"; 
 let isgameover=false;
-
 //function to change the turn
 const changeTurn = ()=>{
     return turn ==="x"?"0":"x"
@@ -14,14 +14,14 @@ const changeTurn = ()=>{
 function checkWin()
 {   
     let wins=[
-        [0, 1, 2, 5, 5, 0],
-        [3, 4, 5, 5, 15, 0],
-        [6, 7, 8, 5, 25, 0],
-        [0, 3, 6, -5, 15, 90],
-        [1, 4, 7, 5, 15, 90],
-        [2, 5, 8, 15, 15, 90],
-        [0, 4, 8, 5, 15, 45],
-        [2, 4, 6, 5, 15, 135],
+        [0, 1, 2, 5, 5, 0, 5, 10],
+        [3, 4, 5, 5, 15, 0, 5, 30],
+        [6, 7, 8, 5, 25, 0, 5, 50],
+        [0, 3, 6, -5, 15, 90, -15, 30],
+        [1, 4, 7, 5, 15, 90, 5, 30],
+        [2, 5, 8, 15, 15, 90,25 ,30],
+        [0, 4, 8, 5, 15, 45, 5, 30],
+        [2, 4, 6, 5, 15, 135,5, 30],
             ];
             wins.forEach(e =>{
             if((boxes[e[0]].innerText === boxes[e[1]].innerText) && (boxes[e[2]].innerText === boxes[e[1]].innerText) && (boxes[e[0]].innerText!=="" ))
@@ -33,6 +33,12 @@ function checkWin()
               console.log(e[3],e[4],e[5]);
               document.querySelector(".line").style.transform=`translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`;
               document.querySelector(".line").style.width = "20vw";
+              if(x.matches)
+              {
+                    console.log("i am working");
+                    document.querySelector(".line").style.transform=`translate(${e[6]}vw, ${e[7]}vw) rotate(${e[5]}deg)`;
+                     document.querySelector(".line").style.width = "50vw";
+            }
 
              }
          })     
